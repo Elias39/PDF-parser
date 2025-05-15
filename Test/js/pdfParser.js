@@ -109,7 +109,7 @@ syntax can be researched in order to understand it,for example regex101 website 
 basics of REGEX*/
 function DataExtraction(string)
 {
-  const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/g;//Our REGEX filter.
+  const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/gm;//Our REGEX filter.
   let match=regex.exec(string);
 
   while(match)
