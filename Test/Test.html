@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <form>
+      <div>
+        <label for="file">Choose file to upload</label>
+        <input
+          onclick="document.getElementById('submit').style.display='block'"
+          oncancel="document.getElementById('submit').style.display='none'"
+          type="file"
+          id="file"
+          name="file"
+          accept=".pdf"
+        />
+      </div>
+	  <div>
+        <button id="submit" style="display: none">Submit</button>
+        <button id="TryThis">Try this</button>
+      </div>
+    </form>
+    <!-- Load the pdf.js library as a module,
+		 generally the specific library cant be loaded in any other way
+		  when you have it locally -->
+  </body>
+  <script type="module" src="js/pdfParser.js"></script>
+</html>
