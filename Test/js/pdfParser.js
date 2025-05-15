@@ -109,8 +109,7 @@ syntax can be researched in order to understand it,for example regex101 website 
 basics of REGEX*/
 function DataExtraction(string)
 {
-  //const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/g;//Our REGEX filter.
-  const regex=/(\r)/g;//Our REGEX filter.
+  const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/g;//Our REGEX filter.
   let match=regex.exec(string);
 
   while(match)
@@ -120,4 +119,3 @@ function DataExtraction(string)
   }/*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
 was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
 }
-//for (let i=0;i<=text.items.length
