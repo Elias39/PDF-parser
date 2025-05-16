@@ -119,3 +119,4 @@ function DataExtraction(string)
   }/*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
 was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
 }
+//Test
