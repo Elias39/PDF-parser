@@ -39,6 +39,7 @@ Needs to be fixed up
     });
   });
 }*/
+
 function extractText(pdfUrl) {
   var pdf = pdfJsLib.getDocument(pdfUrl);
   return pdf.promise.then(function (pdf) {
