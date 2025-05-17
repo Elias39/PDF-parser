@@ -94,6 +94,7 @@ anything*/
 		  //console.log(text);
       PdfString=text;
       DataExtraction(PdfString);
+      console.log(ExtractedValues);
 		 },
 		 function (reason) {
 		  console.error(reason);
@@ -102,7 +103,7 @@ anything*/
    };
    };
 };
-document.getElementById("submit").addEventListener("click",console.log(ExtractedValues));
+//document.getElementById("submit").addEventListener("click",console.log(ExtractedValues));
 /*This function will filter out the wanted information,be it phone numbers,coordinates etc. Using REGEX API we search for
 specific patterns in the text and then cache the results and put em in an array which will be then utilized elsewhere. REGEX
 syntax can be researched in order to understand it,for example regex101 website can help you out after you have grasped the
@@ -119,4 +120,3 @@ function DataExtraction(string)
   }/*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
 was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
 }
-//Test
