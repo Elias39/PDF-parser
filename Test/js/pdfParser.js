@@ -7,39 +7,6 @@ let PdfString;//A string which will contain our entire pdf file's text.
 main function of the library that grabs the pdf file is the .getDocument. This function reads http urls or array buffers as
 parameters,since our user will be uploading the file from a local drive and not from a server,we need to convert the pdf's
 url to an array buffer or a typed array.Then the result is used as a parameter on our extractText function.*/
-
-/*function extractText(pdfUrl) {
-  var pdf = pdfJsLib.getDocument(pdfUrl);
-  return pdf.promise.then(function (pdf) {
-    var totalPageCount = pdf.numPages;
-    var countPromises = [];
-    for (
-      var currentPage = 1;
-      currentPage <= totalPageCount;
-      currentPage++
-    ) {
-      var page = pdf.getPage(currentPage);
-      countPromises.push(
-        page.then(function (page) {
-          var textContent = page.getTextContent();
-          return textContent.then(function (text) {
-            return text.items
-              .map(function (s) {
-                return s.str;
-              })
-              .join('');This method fucks up our string,ignores new lines (/n,carriage return
-and what not)and concatenates the two lines into one thus our coordinate pairs become mixed up. 
-Needs to be fixed up
-          });
-        }),
-      );
-    }
-    return Promise.all(countPromises).then(function (texts) {
-      return texts.join('');
-    });
-  });
-}*/
-
 function extractText(pdfUrl) {
   var pdf = pdfJsLib.getDocument(pdfUrl);
   return pdf.promise.then(function (pdf) {
@@ -104,7 +71,6 @@ anything*/
    };
    };
 };
-//document.getElementById("submit").addEventListener("click",console.log(ExtractedValues));
 /*This function will filter out the wanted information,be it phone numbers,coordinates etc. Using REGEX API we search for
 specific patterns in the text and then cache the results and put em in an array which will be then utilized elsewhere. REGEX
 syntax can be researched in order to understand it,for example regex101 website can help you out after you have grasped the
@@ -120,5 +86,6 @@ function DataExtraction(string)
    match=regex.exec(string);
   }/*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
 was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
+  ExtractedValues.reverse();/*The array has the coordinates in reverse order,so we need to reverse it back to the original 
+order*/
 }
-//test0
