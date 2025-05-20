@@ -26,7 +26,7 @@ function extractText(pdfUrl) {
               .map(function (s) {
                 return s.str;
               })
-              .join(' ');
+              .join(' ');//The gap is there for not ignoring the /n in the end of each pair of coordinates
           });
         }),
       );
@@ -77,7 +77,8 @@ syntax can be researched in order to understand it,for example regex101 website 
 basics of REGEX*/
 function DataExtraction(string)
 {
-  const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/gm;//Our REGEX filter.
+  //const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/gm;Our REGEX filter.
+  const regex=/\d+\.\d+\ \d+\.\d+/gm;//Our REGEX filter.
   let match=regex.exec(string);
 
   while(match)
