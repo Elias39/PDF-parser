@@ -25,7 +25,8 @@ function extractText(pdfUrl) {
               .map(function (s) {
                 return s.str;
               })
-              .join(" "); //The gap is there for not ignoring the /n in the end of each pair of coordinates
+              .join(" "); /*The gap is there for not ignoring the /n in the end of each pair of coordinates,ευχαριστω τον 
+Καραμέτο στον Στρατό.*/
           });
         })
       );
