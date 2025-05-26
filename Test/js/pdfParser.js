@@ -77,7 +77,6 @@ specific patterns in the text and then cache the results and put em in an array 
 syntax can be researched in order to understand it,for example regex101 website can help you out after you have grasped the
 basics of REGEX*/
 function DataExtraction(string) {
-  //const regex=/([0-9]){2}\.([0-9]){1,}\ ([0-9]){2}\.([0-9]){1,}/gm;Our REGEX filter.
   const regex = /\d+\.\d+\ \d+\.\d+/gm; //Our REGEX filter.
   let match = regex.exec(string);
 
