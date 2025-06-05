@@ -83,6 +83,7 @@ function DataExtraction(string) {
   while (match) {
     ExtractedValues.unshift(match[0]);
     match = regex.exec(string);
+    let something;
   } /*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
 was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
   ExtractedValues.reverse(); /*The array has the coordinates in reverse order,so we need to reverse it back to the original 
