@@ -77,14 +77,23 @@ specific patterns in the text and then cache the results and put em in an array 
 syntax can be researched in order to understand it,for example regex101 website can help you out after you have grasped the
 basics of REGEX*/
 function DataExtraction(string) {
-  const regex = /\d+\.\d+\ \d+\.\d+/gm; //Our REGEX filter.
+  const regex = /\d+\.\d+\ \d+\.\d+/gm; // Our REGEX filter.
   let match = regex.exec(string);
-
+  ExtractedValues = []; // Clear previous values
   while (match) {
     ExtractedValues.unshift(match[0]);
     match = regex.exec(string);
-  } /*As long as there's a match from our REGEX filter,the while loop will continue to work and add into our array. This code
-was based on this https://www.youtube.com/watch?v=909NfO1St0A&ab_channel=freeCodeCamp.org*/
-  ExtractedValues.reverse(); /*The array has the coordinates in reverse order,so we need to reverse it back to the original 
-order*/
+  }
+  ExtractedValues.reverse();
+
+  // Display the results in the HTML
+  const outputList = document.getElementById("outputList");
+  if (outputList) {
+    outputList.innerHTML = ""; // Clear previous list
+    ExtractedValues.forEach(function (value) {
+      const li = document.createElement("li");
+      li.textContent = value;
+      outputList.appendChild(li);
+    });
+  }
 }
